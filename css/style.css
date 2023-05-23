@@ -96,6 +96,40 @@ header {
     width: 50%;
 }
 
+.div_article .div_title {
+    justify-content: flex-start;
+
+    width: 100%;
+    padding-left: 10vh;
+}
+
+.div_article .div_text {
+    justify-content: flex-start;
+
+    width: 100%;
+    margin-top: 3vh;
+    padding-left: 10vh;
+}
+
+.div_article .div_text p {
+    font-size: 24px;
+}
+
+.div_article .div_btn {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    margin-top: 3vh;
+}
+
+.div_article .div_btn button{
+    height: 5vh;
+    border: #69a0ff solid 1px;
+    border-radius: 2px;
+    
+}
+
 .div_img {
     display: flex;
     justify-content: center;
