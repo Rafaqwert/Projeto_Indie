@@ -10,7 +10,7 @@ html {
 }
 
 .div_window {
-    height: 120vh;
+    height: 313vh;
     width: 100%;
     background-color: #0055EA;
     border-radius: 2vh 2vh 0vh 0vh;
@@ -57,7 +57,6 @@ header {
     flex-direction: row;
 
     height: 5vh;
-    border-radius: 1vh 1vh 0vh 0vh;
     background-color: #F2F2EC;
     margin: 0vw 1vh;
     border-bottom: #c1c1c1 solid 1px;
@@ -74,14 +73,15 @@ header {
 /* Fim header */
 
 /* Social */
-.div_social {
+
+/* Home */
+.div_home {
     display: flex;
     flex-direction: row;
 
 
     height: 88vh;
 
-    border-radius: 1vh 1vh 0vh 0vh;
     margin: 0vw 1vh;
     padding-top: 12vh;
     background-color: #F2F2EC;
@@ -145,8 +145,49 @@ header {
     border-top: #c1c1c1 solid 1vh;
 }
 
-.div_social .img img {
+.div_home .img img {
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
+
+/* Sobre */
+.div_sobre {
+    display: flex;
+
+
+    border: 1px solid black;
+    height: 88vh;
+
+    margin: 0vw 1vh;
+    padding-top: 12vh;
+    background-color: #F2F2EC;
+}
+
+/* Contato */
+
+.div_contato {
+    display: flex;
+
+
+    border: 1px solid black;
+    height: 88vh;
+
+    margin: 0vw 1vh;
+    padding-top: 12vh;
+    background-color: #F2F2EC;
+}
+
+/* Fim social */
+
+/* Footer */
+.div_footer {
+    display: flex;
+
+    height: 13vh;
+    
+    background: rgb(0,85,234);
+    background: linear-gradient(180deg, rgba(0,85,234,1) 0%, rgba(0,212,255,1) 16%, rgba(9,9,121,1) 90%);
+    
+}
+/* Fim footer */
