@@ -31,21 +31,21 @@ body {
     
 }
 
-.div_cadWindow {
+.div_logWindow {
     display: flex;
     flex-direction: column;
 
-    height: 70vh;
+    height: 40vh;
     width: 60vh;
     background-color:  #0055EA;
     border-radius: 2vh 2vh 0vh 0vh;
 }
 
-.div_cadWindow .div_cadTop {
+.div_logWindow .div_logTop {
     display: flex;
     flex-direction: row;
 
-    height: 7%;
+    height: 13%;
     width: 100%;
     border-radius: 2vh 2vh 0vh 0vh;
 
@@ -53,7 +53,7 @@ body {
     background: linear-gradient(0deg, rgba(0, 85, 234, 1) 0%, rgba(0, 0, 195, 0.989233193277311) 74%, rgba(0, 212, 255, 1) 100%);
 }
 
-.div_cadTop p {
+.div_logTop p {
     padding-left: 7vh;
     padding-top: 1vh;
     color: #ffff;
@@ -62,7 +62,7 @@ body {
     text-shadow: #000 1px 1px;
 }
 
-.div_cadWindow .div_cadBot {
+.div_logWindow .div_logBot {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -75,14 +75,14 @@ body {
     background-color: #F2F2EC;
 }
 
-.div_cadBot .div_input {
+.div_logBot .div_input {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     justify-content: space-evenly;
 
-    height: 70%;
+    height: 50%;
     width: 100%;
 }
 
@@ -101,7 +101,7 @@ body {
     border-bottom: 0;
 }
 
-.div_cadBot .div_check {
+.div_logBot .div_check {
     display: flex;
     flex-direction: row;
 }
