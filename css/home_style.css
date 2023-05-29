@@ -8,13 +8,9 @@ h1 {
     margin: 0%;
 }
 
-html{
+html, body{
     height: 100%;
     width: 100%;
-}
-
-body {
-    height: 600vh;
 }
 
 /* SEÇÃO WINDOWS XP */
@@ -329,7 +325,70 @@ background: linear-gradient(180deg, rgba(228,228,228,1) 5%, rgba(188,188,188,1) 
 /* FIM SEÇÃO WINDOWS 95 */
 
 /* SEÇÃO WINDOWS 7 */
+.section_7{
+    height: 200vh;
+}
 
+.div_window7{
+    height: 200vh;
+    width: 100%;
+    background-color: #8dceeb
+}
+
+/*header*/
+.header_7 {
+    /* position: fixed; */
+    height: 12vh;
+    width: 100%;
+}
+
+.header_7 .div_header {
+    background-color: #bcbcbc;
+    width: 100%;
+}
+
+.header_7 .div_header .div_headerTop{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 8vh;
+    background-color: #8dceeb;
+    border-radius: 1.5vh 1.5vh 0 0;
+}
+
+.header_7 .div_headerTop p {
+    padding-top: 1vh;
+    color: #ffff;
+    font-weight: 900;
+    font-size: 20px;
+    text-shadow: #000 1px 1px;
+}
+
+.header_7 .div_headerTop img {
+    height: 5vh;
+    margin: 1vh;
+}
+
+.header_7 .div_headerBot{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 8vh;
+    background-color: #8dceeb;
+}
+
+.header_7 .div_headerBot div {
+    margin-left: 2vh;
+}
+
+.header_7 .div_headerBot p {
+    padding: 1vh;
+}
+
+.header_7 .div_headerBot a {
+    color: #000;
+    text-decoration: none;
+}
 
 
 /* FIM SEÇÃO WINDOWS 7 */
