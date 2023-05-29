@@ -31,7 +31,7 @@ body {
 
 /*Header*/
 .header_xp {
-    position: fixed;
+    /* position: fixed; */
     height: 12vh;
     width: 100%;
 }
@@ -94,12 +94,11 @@ body {
     flex-direction: column;
     height: 88vh;
     margin: 0vh 1vh;
-    padding-top: 12vh;
+    /* padding-top: 12vh; */
     background-color: #F2F2EC;
 }
 
 .div_home .div_cape {
-    
     background-image: url('../img/xp_bg.jpg');
 }
 
@@ -125,7 +124,7 @@ body {
 .div_content article {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 70%;
     padding-top: 10vh;
     padding-left: 5vh;
 }
@@ -179,13 +178,20 @@ body {
 }
 
 .div_home2 .div_contentContainer .div_content article {
+    width: 100%;
     padding-left: 5vh;
-    padding-right: 2vh;
+    
 }
 
 .div_home2 .div_contentContainer .div_content article p{
     padding-bottom: 3vh;
+    padding-right: 5vh;
     font-size: larger;
+}
+
+.div_home2 .div_contentContainer .div_content article h1{
+    margin-bottom: 5vh;
+    font-size: 30px;
 }
 
 /* FIM SEÇÂO WINDOWS XP */
@@ -257,7 +263,22 @@ background: linear-gradient(180deg, rgba(228,228,228,1) 5%, rgba(188,188,188,1) 
 /* Fim header */
 
 .div_window95 .div_home {
-    background-image: url('../img/win95_btfsky.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #bcbcbc;
+}
+
+.div_window95 .div_home .div_content {
+    background-image: url('../img/stars.gif');
+    height: 90vh;
+    width: 190vh;
+    border-left: 0.5vh solid #4f4f4f;
+    border-top: 0.5vh solid #4f4f4f;
+}
+
+.div_window95 .div_home .div_content img{
+    height: 150px;
 }
 /* FIM SEÇÃO WINDOWS 95 */
 
