@@ -149,8 +149,8 @@ header {
 .img {
     height: 90%;
     width: 80%;
-    border-left: #a9a9a9 solid 1vh;
-    border-top: #a9a9a9 solid 1vh;
+    border-left: 1vh solid #a9a9a9;
+    border-top: 1vh solid #a9a9a9;
 }
 
 .div_home .img img {
