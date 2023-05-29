@@ -1,0 +1,113 @@
+* {
+    font-family: 'Tahoma';
+
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url('../img/win95_btfsky.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.div_ico{
+    padding-bottom: 2vh;
+    padding-right: 60vh;
+}
+
+.div_ico img {
+    position: absolute;
+    height: 7vh;
+    
+}
+
+.div_logWindow {
+    display: flex;
+    flex-direction: column;
+
+    height: 40vh;
+    width: 60vh;
+    background-color:  #0055EA;
+    border-radius: 2vh 2vh 0vh 0vh;
+}
+
+.div_logWindow .div_logTop {
+    display: flex;
+    flex-direction: row;
+
+    height: 13%;
+    width: 100%;
+    border-radius: 2vh 2vh 0vh 0vh;
+
+    background: rgb(0, 85, 234);
+    background: linear-gradient(0deg, rgba(0, 85, 234, 1) 0%, rgba(0, 0, 195, 0.989233193277311) 74%, rgba(0, 212, 255, 1) 100%);
+}
+
+.div_logTop p {
+    padding-left: 7vh;
+    padding-top: 1vh;
+    color: #ffff;
+    font-weight: 900;
+    font-size: 18px;
+    text-shadow: #000 1px 1px;
+}
+
+.div_logWindow .div_logBot {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    height: 92%;
+    width: auto;
+
+    margin: 0vh 1vh 1vh 1vh;
+    background-color: #F2F2EC;
+}
+
+.div_logBot .div_input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+
+    height: 50%;
+    width: 100%;
+}
+
+.div_input label {
+    padding-bottom: 0;
+    font-size: 15px;
+}
+
+.div_input input {
+
+    height: 20px;
+    width: 200px;
+    border-left: #a9a9a9 solid 0.5vh;
+    border-top: #a9a9a9 solid 0.5vh;
+    border-right: 0;
+    border-bottom: 0;
+}
+
+.div_logBot .div_check {
+    display: flex;
+    flex-direction: row;
+}
+
+.div_check p{
+    padding-left: 1vh;
+    font-size: 12px;
+}
+
