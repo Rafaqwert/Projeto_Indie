@@ -443,12 +443,14 @@ body {
 
 .div_questions {
     height: 25%;
-    background-color: #0000AA;
+    background-color: #e1e1e1;
 }
 
 .div_graphic {
+    display: flex;
+    justify-content: center;
     height: 75%;
-
+    width: 100%;
 }
 
 /* =====================FIM SEÇÃO WINDOWS 7===================== */
