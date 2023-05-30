@@ -96,7 +96,7 @@ body {
 }
 
 .div_windowXp .div_home .div_cape {
-    background-image: url('../img/xp_bg.jpg');
+    background-image: url('../assets/imgs/xp_bg.jpg');
 }
 
 .div_windowXp .div_cape h1 {
@@ -269,7 +269,7 @@ body {
 }
 
 .div_window95 .div_home .div_content {
-    background-image: url('../img/stars.gif');
+    background-image: url('../assets/gifs/stars.gif');
     height: 85vh;
     width: 190vh;
     
@@ -292,7 +292,7 @@ body {
 }
 
 .div_window95 .div_home2 .div_content {
-    background-image: url('../img/xp_vapor_bg.jpg');
+    background-image: url('../assets/imgs/xp_vapor_bg.jpg');
     background-size: cover;
     height: 88vh;
     width: 190vh;

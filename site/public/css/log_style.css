@@ -14,8 +14,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    background-image: url('../img/win95_btfsky.jpg');
+    background-image: url('../assets/imgs/win95_btfsky.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -27,14 +26,12 @@ body {
 
 .div_ico img {
     position: absolute;
-    height: 7vh;
-    
+    height: 7vh; 
 }
 
 .div_logWindow {
     display: flex;
     flex-direction: column;
-
     height: 40vh;
     width: 60vh;
     background-color:  #0055EA;
@@ -44,11 +41,9 @@ body {
 .div_logWindow .div_logTop {
     display: flex;
     flex-direction: row;
-
     height: 13%;
     width: 100%;
     border-radius: 2vh 2vh 0vh 0vh;
-
     background: rgb(0, 85, 234);
     background: linear-gradient(0deg, rgba(0, 85, 234, 1) 0%, rgba(0, 0, 195, 0.989233193277311) 74%, rgba(0, 212, 255, 1) 100%);
 }
@@ -67,10 +62,8 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-
     height: 92%;
     width: auto;
-
     margin: 0vh 1vh 1vh 1vh;
     background-color: #F2F2EC;
 }
@@ -81,7 +74,6 @@ body {
     justify-content: center;
     align-items: center;
     justify-content: space-evenly;
-
     height: 50%;
     width: 100%;
 }
@@ -92,7 +84,6 @@ body {
 }
 
 .div_input input {
-
     height: 20px;
     width: 200px;
     border-left: #a9a9a9 solid 0.5vh;

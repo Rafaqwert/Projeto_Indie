@@ -15,7 +15,7 @@ body {
     align-items: center;
     justify-content: center;
 
-    background-image: url('../img/win95_btfsky.jpg');
+    background-image: url('../assets/imgs/win95_btfsky.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
