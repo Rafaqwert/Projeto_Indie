@@ -1,20 +1,21 @@
 * {
     font-family: 'Tahoma';
-
     margin: 0;
+    padding: 0;
 }
 
 h1 {
     margin: 0%;
 }
 
-html, body{
+html,
+body {
     height: 100%;
     width: 100%;
 }
 
-/* SEÇÃO WINDOWS XP */
-.section_xp{
+/* =====================SEÇÃO WINDOWS XP===================== */
+.section_xp {
     height: 200vh;
 }
 
@@ -98,7 +99,7 @@ html, body{
     background-image: url('../img/xp_bg.jpg');
 }
 
-.div_windowXp .div_cape h1{
+.div_windowXp .div_cape h1 {
     font-size: 40px;
     padding-top: 5vh;
     padding-left: 2vh;
@@ -125,7 +126,7 @@ html, body{
     padding-left: 5vh;
 }
 
-.div_content article p{
+.div_content article p {
     font-size: larger;
     padding-bottom: 3vh;
 }
@@ -155,7 +156,7 @@ html, body{
     padding: 5vh;
 }
 
-.div_windowXp .div_home2 .div_contentContainer .img{
+.div_windowXp .div_home2 .div_contentContainer .img {
     display: flex;
     width: 25%;
     height: 90vh;
@@ -176,45 +177,43 @@ html, body{
 .div_windowXp .div_home2 .div_contentContainer .div_content article {
     width: 100%;
     padding-left: 5vh;
-    
+
 }
 
-.div_windowXp .div_home2 .div_contentContainer .div_content article p{
+.div_windowXp .div_home2 .div_contentContainer .div_content article p {
     padding-bottom: 3vh;
     padding-right: 5vh;
     font-size: larger;
 }
 
-.div_windowXp .div_home2 .div_contentContainer .div_content article h1{
+.div_windowXp .div_home2 .div_contentContainer .div_content article h1 {
     margin-bottom: 5vh;
     font-size: 30px;
 }
 
-/* FIM SEÇÂO WINDOWS XP */
+/* =====================FIM SEÇÂO WINDOWS XP===================== */
 
-/* SEÇÂO WINDOWS 95 */
-.section_95{
+/* =====================SEÇÂO WINDOWS 95===================== */
+.section_95 {
     height: 200vh;
 }
 
-.div_window95{
+.div_window95 {
     height: 200vh;
     width: 100%;
     background-color: #bcbcbc;
     border-bottom: 2.5vh solid rgb(42, 42, 42);
 }
+
 /* Header */
 .header_95 {
     /* position: fixed; */
-
-    height: 15vh;
+    height: 16vh;
     width: 100%;
 }
 
 .header_95 .div_header {
-    background: rgb(228,228,228);
-background: linear-gradient(180deg, rgba(228,228,228,1) 5%, rgba(188,188,188,1) 14%, rgba(188,188,188,1) 30%);
-    padding: 1vh;
+    background: linear-gradient(180deg, rgba(228, 228, 228, 1) 5%, rgba(188, 188, 188, 1) 14%, rgba(188, 188, 188, 1) 30%);
 }
 
 .header_95 .div_headerTop {
@@ -223,6 +222,7 @@ background: linear-gradient(180deg, rgba(228,228,228,1) 5%, rgba(188,188,188,1) 
     align-items: center;
     height: 8vh;
     background-color: #0000AA;
+    margin: 1vh;
 }
 
 .header_95 .div_headerTop p {
@@ -231,7 +231,7 @@ background: linear-gradient(180deg, rgba(228,228,228,1) 5%, rgba(188,188,188,1) 
     font-weight: 900;
 }
 
-.header_95 .div_headerTop img{
+.header_95 .div_headerTop img {
     height: 5vh;
     margin: 1vh;
 }
@@ -257,6 +257,7 @@ background: linear-gradient(180deg, rgba(228,228,228,1) 5%, rgba(188,188,188,1) 
     color: #000;
     text-decoration: none;
 }
+
 /* Fim header */
 
 .div_window95 .div_home {
@@ -264,13 +265,14 @@ background: linear-gradient(180deg, rgba(228,228,228,1) 5%, rgba(188,188,188,1) 
     justify-content: center;
     align-items: center;
     background-color: #bcbcbc;
-    padding-bottom: 3vh;
+    height: 88vh;
 }
 
 .div_window95 .div_home .div_content {
     background-image: url('../img/stars.gif');
-    height: 90vh;
-    width: 220vh;
+    height: 85vh;
+    width: 190vh;
+    
     border-left: 0.8vh solid #4f4f4f;
     border-top: 0.8vh solid #4f4f4f;
 }
@@ -280,23 +282,25 @@ background: linear-gradient(180deg, rgba(228,228,228,1) 5%, rgba(188,188,188,1) 
 }
 
 .div_window95 .div_home2 {
+    padding-top: 2vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #bcbcbc;
-    padding-bottom: 3vh;
+    margin: 1vh;
+    height: 88vh;
 }
 
 .div_window95 .div_home2 .div_content {
     background-image: url('../img/xp_vapor_bg.jpg');
     background-size: cover;
-    height: 90vh;
-    width: 220vh;
+    height: 88vh;
+    width: 190vh;
     border-left: 0.8vh solid #4f4f4f;
     border-top: 0.8vh solid #4f4f4f;
 }
 
-.div_window95 .div_home2 .div_content .div_section .div_decor {
+.div_window95 .div_decor {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -308,10 +312,9 @@ background: linear-gradient(180deg, rgba(228,228,228,1) 5%, rgba(188,188,188,1) 
     width: 70%;
 }
 
-.div_window95 .div_home2 .div_content .div_section{
+.div_window95 .div_home2 .div_content .div_section {
     display: flex;
     flex-direction: row;
-
     width: 100%;
     height: 50%;
 }
@@ -322,17 +325,19 @@ background: linear-gradient(180deg, rgba(228,228,228,1) 5%, rgba(188,188,188,1) 
 
     background-color: #bcbcbc;
 }
-/* FIM SEÇÃO WINDOWS 95 */
 
-/* SEÇÃO WINDOWS 7 */
-.section_7{
+/* =====================FIM SEÇÃO WINDOWS 95===================== */
+
+/* =====================SEÇÃO WINDOWS 7===================== */
+.section_7 {
     height: 200vh;
 }
 
-.div_window7{
+.div_window7 {
     height: 200vh;
     width: 100%;
-    background-color: #8dceeb
+    background: rgb(57, 92, 125);
+    background: radial-gradient(circle, rgba(57, 92, 125, 1) 28%, rgba(122, 155, 189, 1) 64%, rgba(174, 194, 217, 1) 100%);
 }
 
 /*header*/
@@ -343,16 +348,16 @@ background: linear-gradient(180deg, rgba(228,228,228,1) 5%, rgba(188,188,188,1) 
 }
 
 .header_7 .div_header {
-    background-color: #bcbcbc;
     width: 100%;
+    background: rgb(57, 92, 125);
+    background: radial-gradient(circle, rgba(57, 92, 125, 1) 28%, rgba(122, 155, 189, 1) 64%, rgba(174, 194, 217, 1) 100%);
 }
 
-.header_7 .div_header .div_headerTop{
+.header_7 .div_header .div_headerTop {
     display: flex;
     flex-direction: row;
     align-items: center;
     height: 8vh;
-    background-color: #8dceeb;
     border-radius: 1.5vh 1.5vh 0 0;
 }
 
@@ -369,12 +374,14 @@ background: linear-gradient(180deg, rgba(228,228,228,1) 5%, rgba(188,188,188,1) 
     margin: 1vh;
 }
 
-.header_7 .div_headerBot{
+.header_7 .div_headerBot {
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 8vh;
-    background-color: #8dceeb;
+    height: 4vh;
+    background-color: #DDE6F4;
+    margin: 0 1vh;
+    border-bottom: 1px solid #000;
 }
 
 .header_7 .div_headerBot div {
@@ -390,5 +397,58 @@ background: linear-gradient(180deg, rgba(228,228,228,1) 5%, rgba(188,188,188,1) 
     text-decoration: none;
 }
 
+/* Fim header */
 
-/* FIM SEÇÃO WINDOWS 7 */
+.div_window7 .div_home {
+    display: flex;
+    flex-direction: column;
+    height: 88vh;
+    margin: 0 1vh;
+    background-color: #ffffff;
+    border: 1px solid #a9a9a9;
+}
+
+.div_window7 .div_home .div_content {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.div_window7 .div_home .div_content article {
+    width: 75%;
+}
+
+.div_window7 .div_home .div_content .img {
+    height: 100%;
+    width: 25%;
+    border-left: 1px solid #a9a9a9;
+}
+
+.div_window7 .div_home .div_content .img img {
+    float: left;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 30%;
+}
+
+.div_quiz {
+    display: flex;
+    flex-direction: column;
+    height: 88vh;
+    margin: 0 1vh;
+    background-color: #ffffff;
+    border: 1px solid #a9a9a9;
+}
+
+.div_questions {
+    height: 25%;
+    background-color: #0000AA;
+}
+
+.div_graphic {
+    height: 75%;
+
+}
+
+/* =====================FIM SEÇÃO WINDOWS 7===================== */
