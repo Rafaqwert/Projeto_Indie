@@ -1,9 +1,29 @@
+//Váriavel que faz uma requisição do pacote mysql2 (presente em package.json)
+//Pacote referente ao MySQL workbench
 var mysql = require("mysql2");
+//Váriavel que faz uma requisição do pacote mssql (presente em package.json)
+//Pacote referente ao SQL Server
 var sql = require('mssql');
 
-//=================CONEXÃO DO MYSQL WORKBENCH====================//
+//=================CONEXÃO DO BANCO DE DADOS====================//
 
-//Configurações do servidor
+// CONEXÃO DO SQL SERVER - AZURE (NUVEM)
+// var sqlServerConfig = {
+//     server: "SEU_SERVIDOR",
+//     database: "SEU_BANCO_DE_DADOS",
+//     user: "SEU_USUARIO",
+//     password: "SUA_SENHA",
+//     pool: {
+//         max: 10,
+//         min: 0,
+//         idleTimeoutMillis: 30000
+//     },
+//     options: {
+//         encrypt: true, // for azure
+//     }
+// }
+
+//Configurações do servidor (para conectar com o MySQL workbench)
 var mySqlConfig = { 
     host: "SEU_SERVIDOR",
     database: "SEU_BANCO_DE_DADOS",

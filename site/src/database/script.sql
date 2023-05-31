@@ -1,3 +1,5 @@
+-- Documento de apoio para criação de banco e tabelas em outras máquinas
+
 CREATE DATABASE Webaesthetic;
 
 USE Webaesthetic;
