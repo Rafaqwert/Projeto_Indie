@@ -53,9 +53,21 @@
 
         //Recupera valores naa inputs
         var nomeVar = ipt_nomeUser.value; //Nome do usuário
-        var emailVar = ipt_email.value;
-        var senhaVar = ipt_senha.value;
-        var confirmacaoSenhaVar = ipt_confirmaSenha.value;
+        var emailVar = ipt_email.value; //Email do usuário
+        var senhaVar = ipt_senha.value; //Senha do usuário
+        var confirmacaoSenhaVar = ipt_confirmaSenha.value; //Confirmação de senha do usuário
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            cardErro.style.display = "block";
+            alert("Preencha todos os campos");
+
+            finalizarAguardar();
+            return false;
+        } else {
+            //setInterval(sumirMensagem, 5000);
+        }
+
+        fetch("")
 
         
     }
