@@ -273,7 +273,7 @@
     const ctx = document.getElementById('myChart');
 
     new Chart(ctx, {
-        type: 'bar',
+        type: 'pie',
         data: {
             labels: ['Old web', 'Y2K', 'Frutiger aero', 'Vaporwave'],
             datasets: [{
@@ -281,13 +281,6 @@
                 data: [12, 19, 3, 5],
                 borderWidth: 1
             }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
         }
     });
 </script>
