@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="css/cad_style.css">
+    <link rel="icon" type="image/x-icon" href="assets/icons/world.ico">
+    <script src="js/funcoes.js"></script>
+</head>
+
+<body>
+    <div class="div_ico">
+        <img src="assets/icons/cadastro.ico">
+    </div>
+    <div class="div_cadWindow">
+        <div class="div_cadTop">
+
+            <p>Cadastro</p>
+        </div>
+        <div class="div_cadBot">
+            <div class="div_input">
+                <label for="ipt_email">E-mail:</label>
+                <input type="email" class="ipt_email" placeholder="meuemail@email.com">
+
+                <label for="ipt_nomeUser">Nome do usuário:</label>
+                <input type="text" class="ipt_nomeUser" placeholder="Meu Nome">
+
+                <label for="ipt_senha">Senha:</label>
+                <input type="password" class="ipt_senha" placeholder="**************">
+
+                <label for="ipt_comfirmaSenha">Confirme sua senha:</label>
+                <input type="password" class="ipt_confirmaSenha" placeholder="**************">
+            </div>
+            <div class="div_check">
+                <input type="checkbox"> <p>Mostrar senha</p>
+            </div>
+            <div class="div_btn">
+                <a href="login.html"><button>Cadastrar</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    //?Função para cadastrar informações do usúario
+    function cadastrar() {
+        aguardar();
+
+        //Recupera valores naa inputs
+        var nomeVar = ipt_nomeUser.value; //Nome do usuário
+        var emailVar = ipt_email.value; //Email do usuário
+        var senhaVar = ipt_senha.value; //Senha do usuário
+        var confirmacaoSenhaVar = ipt_confirmaSenha.value; //Confirmação de senha do usuário
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            cardErro.style.display = "block";
+            alert("Preencha todos os campos");
+
+            finalizarAguardar();
+            return false;
+        } else {
+            //setInterval(sumirMensagem, 5000);
+        }
+
+        fetch("")
+
+        
+    }
+</script>
