@@ -20,15 +20,14 @@ body {
     background-repeat: no-repeat;
 }
 
-.div_ico{
+.div_ico {
     padding-bottom: 2vh;
-    padding-right: 60vh;
+    padding-right: 90vh;
 }
 
 .div_ico img {
     position: absolute;
     height: 7vh;
-    
 }
 
 .div_cadWindow {
@@ -36,7 +35,7 @@ body {
     flex-direction: column;
 
     height: 70vh;
-    width: 60vh;
+    width: 90vh;
     background-color:  #0055EA;
     border-radius: 2vh 2vh 0vh 0vh;
 }
@@ -64,26 +63,34 @@ body {
 
 .div_cadWindow .div_cadBot {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-
+    flex-direction: row;
     height: 92%;
-    width: auto;
-
+    width: 98%;
     margin: 0vh 1vh 1vh 1vh;
     background-color: #F2F2EC;
 }
 
-.div_cadBot .div_input {
+.div_forms {
+    width: 50%;
+    height: 100%;
+}
+
+.obg_form {
     display: flex;
     flex-direction: column;
+    height: 70%;
+    width: 100%;
     justify-content: center;
     align-items: center;
     justify-content: space-evenly;
+}
 
-    height: 70%;
-    width: 100%;
+.opt_form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+    align-items: center;
 }
 
 .div_input label {
@@ -91,7 +98,7 @@ body {
     font-size: 15px;
 }
 
-.div_input input {
+.div_cadBot .obg_form input, .opt_form input, select {
 
     height: 20px;
     width: 200px;
@@ -101,13 +108,36 @@ body {
     border-bottom: 0;
 }
 
-.div_cadBot .div_check {
-    display: flex;
-    flex-direction: row;
+.opt_form label {
+    margin-top: 10vh;
+    margin-bottom: 1vh;
 }
 
-.div_check p{
+.opt_form input {
+    width: 30vh;
+    height: 10vh;
+}
+
+.div_check {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.div_check p {
     padding-left: 1vh;
     font-size: 12px;
+}
+
+.div_btn {
+    display: flex;
+    justify-content: center;
+    padding-top: 5vh;
+    width: 200%;
+}
+
+button {
+    height: 30px;
+    width: 90px;
 }
 
