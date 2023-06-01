@@ -27,7 +27,7 @@
                 <input type="password" id="ipt_senha" placeholder="**************">
             </div>
             <div class="div_check">
-                <input type="checkbox"> <p>Mostrar senha</p>
+                <input type="checkbox" id="chk_mostraSenha" onclick="mostraSenha()"> <p>Mostrar senha</p>
             </div>
             <div class="div_btn">
                 <button onclick="entrar()">Entrar</button>
@@ -36,6 +36,21 @@
 </html>
 
 <script>
+
+    function mostraSenha() {
+        var senhaInput = document.getElementById("ipt_senha")
+
+        const checkbox = document.getElementById("chk_mostraSenha");
+        const isChecked =  checkbox.checked;
+
+        if (isChecked) {
+            senhaInput.type = "text";
+        }
+        else {
+            senhaInput.type = "password";
+        }
+    }
+
     function entrar() {
         aguardar();
 
