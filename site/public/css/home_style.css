@@ -213,7 +213,7 @@ body {
 }
 
 .header_95 .div_header {
-    background: linear-gradient(180deg, rgba(228, 228, 228, 1) 5%, rgba(188, 188, 188, 1) 14%, rgba(188, 188, 188, 1) 30%);
+    background: linear-gradient(180deg, rgb(228, 228, 228) 5%, rgba(188, 188, 188, 1) 14%, rgba(188, 188, 188, 1) 30%);
 }
 
 .header_95 .div_headerTop {
