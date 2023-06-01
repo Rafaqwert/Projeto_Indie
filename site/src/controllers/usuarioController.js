@@ -1,23 +1,21 @@
+//Váriavel que faz uma requisição do arquivo usuarioModel (presente na pasta models)
 var usuarioModel = require("../models/usuarioModel")
 
 var sessoes = [];
 
+//?Função para testar se o funcionamento do pacote está de acordo
 function testar(req, res) { 
     console.log("ENTRAMOS NA usuarioController");
     res.json("ESTAMOS FUNCIONANDO!");
 }
 
-function testar(req, res) {
-    console.log("ENTRAMOS NA usuarioController");
-    res.json("ESTAMOS FUNCIONANDO!");
-}
-
+//Lista os usuários cadastrados
 function listar(req, res) {
     usuarioModel.listar()
         .then(function (resultado) {
-            if (resultado.length > 0) {
+            if (resultado.length > 0) {//Se achou um cadastro envie status 200
                 res.status(200).json(resultado);
-            } else {
+            } else {//Se não achou nenhum envie status 204
                 res.status(204).send("Nenhum resultado encontrado!")
             }
         }).catch(
@@ -29,15 +27,16 @@ function listar(req, res) {
         );
 }
 
+//?Função que trata os dados para logar no blog
 function entrar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
 
-    if (email == undefined) {
+    if (email == undefined) {//Se seu email estiver undefined status 400
         res.status(400).send("Seu email está undefined!");
-    } else if (senha == undefined) {
+    } else if (senha == undefined) {//Se sua senha estiver undefined status 400
         res.status(400).send("Sua senha está indefinida!");
-    } else {
+    } else {//Se estiver tudo certo, entra no blog
         
         usuarioModel.entrar(email, senha)
             .then(
@@ -65,6 +64,7 @@ function entrar(req, res) {
 
 }
 
+//Função que trata os dados para cadastro no banco
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var nome = req.body.nomeServer;

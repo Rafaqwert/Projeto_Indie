@@ -1,5 +1,4 @@
 -- Documento de apoio para criação de banco e tabelas em outras máquinas
-
 CREATE DATABASE Webaesthetic;
 
 USE Webaesthetic;
@@ -55,5 +54,12 @@ INSERT INTO Webaesthetic.Favorito(nomeEstetica) VALUES
 ('Y2K Millenium'),
 ('Frutiger Aero'),
 ('Vaporwave');
+
+-- Configuração de privilégios do usuário
+GRANT USAGE ON webaesthetics.* TO 'adm_1'@'%';
+GRANT ALL PRIVILEGES ON Webaesthetic.* TO adm_1;
+FLUSH PRIVILEGES;
+
+SHOW GRANTS FOR adm_1;
 
 -- DROP DATABASE Webaesthetic;

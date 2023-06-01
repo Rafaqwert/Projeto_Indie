@@ -25,10 +25,10 @@ var sql = require('mssql');
 
 //Configurações do servidor (para conectar com o MySQL workbench)
 var mySqlConfig = { 
-    host: "SEU_SERVIDOR",
-    database: "SEU_BANCO_DE_DADOS",
-    user: "SEU_USUARIO",
-    password: "SUA_SENHA",
+    host: "127.0.0.1",
+    database: "webaesthetic",
+    user: "adm_1",
+    password: "urubu100",
 };
 
 
