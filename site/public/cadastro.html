@@ -23,22 +23,22 @@
         <div class="div_cadBot">
             <div class="div_input">
                 <label for="ipt_email">E-mail:</label>
-                <input type="email" class="ipt_email" placeholder="meuemail@email.com">
+                <input type="email" id="ipt_email" placeholder="meuemail@email.com">
 
                 <label for="ipt_nomeUser">Nome do usuário:</label>
-                <input type="text" class="ipt_nomeUser" placeholder="Meu Nome">
+                <input type="text" id="ipt_nomeUser" placeholder="Meu Nome">
 
                 <label for="ipt_senha">Senha:</label>
-                <input type="password" class="ipt_senha" placeholder="**************">
+                <input type="password" id="ipt_senha" placeholder="**************">
 
                 <label for="ipt_comfirmaSenha">Confirme sua senha:</label>
-                <input type="password" class="ipt_confirmaSenha" placeholder="**************">
+                <input type="password" id="ipt_confirmaSenha" placeholder="**************">
             </div>
             <div class="div_check">
                 <input type="checkbox"> <p>Mostrar senha</p>
             </div>
             <div class="div_btn">
-                <a href="login.html"><button>Cadastrar</button></a>
+                <button onclick="cadastrar()">Cadastrar</button>
             </div>
         </div>
     </div>
@@ -57,8 +57,9 @@
         var senhaVar = ipt_senha.value; //Senha do usuário
         var confirmacaoSenhaVar = ipt_confirmaSenha.value; //Confirmação de senha do usuário
 
+        //Validações
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
-            cardErro.style.display = "block";
+            //cardErro.style.display = "block";
             alert("Preencha todos os campos");
 
             finalizarAguardar();
@@ -67,8 +68,44 @@
             //setInterval(sumirMensagem, 5000);
         }
 
-        fetch("")
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nomeServer:nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function(resposta) {
 
-        
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                //cardErro.style.display = "block";
+
+                //mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                alert("deu certo")
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
     }
 </script>
