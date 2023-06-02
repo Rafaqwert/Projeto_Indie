@@ -369,7 +369,7 @@ body {
     text-shadow: #000 1px 1px;
 }
 
-.header_7 .div_headerTop img {
+.header_7  img {
     height: 5vh;
     margin: 1vh;
 }
@@ -434,7 +434,7 @@ body {
 
 .div_quiz {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     height: 88vh;
     margin: 0 1vh;
     background-color: #ffffff;
@@ -442,15 +442,26 @@ body {
 }
 
 .div_questions {
-    height: 25%;
+    display: flex;
+    width: 25%;
     background-color: #e1e1e1;
 }
 
 .div_graphic {
     display: flex;
     justify-content: center;
-    height: 75%;
-    width: 100%;
+    height: 100%;
+    width: 75%;
+}
+
+.radios {
+    margin: 2vh;
+    height: 30vh;
+}
+
+.radios input{
+   margin-top: 20px;
+   margin-left: 10px;
 }
 
 /* =====================FIM SEÇÃO WINDOWS 7===================== */

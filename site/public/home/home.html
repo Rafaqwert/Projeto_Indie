@@ -254,12 +254,27 @@
 
             <div class="div_quiz">
                 <div class="div_questions">
+                    <fieldset class="radios">
+                        <legend>Escolha sua estética favorita</legend>
 
+                        <input type="radio" id="slct_none" name="option" onclick="favoritar(0)">
+                        <label for="slct_none">(Não selecionar)</label><br>
+
+                        <input type="radio" id="slct_oldWeb" name="option" onclick="favoritar(1)">
+                        <label for="slct_oldWeb">Old web</label><br>
+
+                        <input type="radio" id="slct_y2k" name="option" onclick="favoritar(2)">
+                        <label for="slct_y2k">Y2K</label><br>
+
+                        <input type="radio" id="slct_frutAero" name="option" onclick="favoritar(3)">
+                        <label for="slct_frutAero">Frutiger Aero</label><br>
+
+                        <input type="radio" id="slct_vaporwave" name="option" onclick="favoritar(4)">
+                        <label for="slct_vaporwave">Vaporwave</label><br>
+                    </fieldset>
                 </div>
                 <div class="div_graphic">
-
                     <canvas id="myChart"></canvas>
-
                 </div>
             </div>
 
@@ -277,10 +292,30 @@
         data: {
             labels: ['Old web', 'Y2K', 'Frutiger aero', 'Vaporwave'],
             datasets: [{
-                label: 'Popularidade das estéticas por # voto',
+                label: 'Popularidade da estética',
                 data: [12, 19, 3, 5],
                 borderWidth: 1
             }]
         }
     });
+
+    function favoritar(fav) {
+
+        if (fav == 0){
+            console.log("nada")
+        }
+        else if (fav == 1){
+            console.log("old")
+        }
+        else if (fav == 2){
+            console.log("2000")
+        }
+        else if (fav == 3){
+            console.log("fruta")
+        }
+        else if (fav == 4){
+            console.log("vapor")
+        }
+
+    }
 </script>
