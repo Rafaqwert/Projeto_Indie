@@ -99,9 +99,39 @@ function cadastrar(req, res) {
     }
 }
 
+function favoritar(req, res) {
+    
+    var idCadastro = req.body.idServer;
+    var fav = req.body.favServer;
+
+    if (fav == undefined) {
+        res.status(400).send("Favorito está indefinido")
+    } else if (idCadastro == undefined){
+        res.status(400).send("ID está indefinido")
+    } else {
+
+        usuarioModel.favoritar(idCadastro, fav)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao atualizar seus favoritos! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
-    testar
+    testar,
+    favoritar,
 }

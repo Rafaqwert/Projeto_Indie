@@ -34,8 +34,17 @@ function cadastrar(nome, email, senha) {//Função que cadastra os usuários no 
     return database.executar(instrucao);
 }
 
+function favoritar(idCadastro, fav) {
+    
+    var instrucao = `UPDATE cadastro SET fkFavorito = ${fav} WHERE idCadastro = ${idCadastro};`
+
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
+    favoritar,
 };

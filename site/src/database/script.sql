@@ -40,10 +40,22 @@ CREATE TABLE Webaesthetic.Favorito(
 );
 
 INSERT INTO Webaesthetic.Favorito(nomeEstetica) VALUES
+('Nenhum'),
 ('Old Web'),
 ('Y2K Millenium'),
 ('Frutiger Aero'),
 ('Vaporwave');
+
+INSERT INTO Cadastro(nome, email, senha, fkFavorito) VALUES 
+('A', 'a@email', '123', 2),
+('B', 'b@email', '123', 1),
+('C', 'c@email', '123', 3),
+('D', 'd@email', '123', 3),
+('E', 'e@email', '123', 4),
+('F', 'f@email', '123', 5),
+('G', 'g@email', '123', 4),
+('H', 'h@email', '123', 5),
+('I', 'i@email', '123', 2);
 
 -- Configuração de chave estrangeira (relação de Cadastro com Favorito)
 ALTER TABLE Webaesthetic.Cadastro ADD FOREIGN KEY(fkFavorito) REFERENCES webaesthetic.Favorito(idFavorito);
@@ -55,10 +67,16 @@ SELECT * FROM webaesthetic.Favorito;
 
 SELECT nome, fkFavorito, nomeEstetica FROM webaesthetic.cadastro RIGHT JOIN webaesthetic.favorito
 	ON fkFavorito = idFavorito;
+-- quantidade de vezes que uma determinada estetica foi escolhida
+SELECT nomeEstetica, COUNT(fkFavorito) Votos FROM Cadastro JOIN Favorito ON fkFavorito = IdFavorito GROUP BY nomeEstetica;
 
 -- Configuração de privilégios do usuário
-GRANT USAGE ON webaesthetics.* TO 'adm_1'@'%';
-GRANT ALL PRIVILEGES ON Webaesthetic.* TO adm_1;
-FLUSH PRIVILEGES;
+-- GRANT USAGE ON webaesthetics.* TO 'adm_1'@'%';
+-- GRANT ALL PRIVILEGES ON Webaesthetic.* TO adm_1;
+-- FLUSH PRIVILEGES;
 
-SHOW GRANTS FOR adm_1;
+-- SHOW GRANTS FOR adm_1;
+
+-- Select nome, fkFavorito FROM Cadastro JOIN Favorito ON fkFavorito = idFavorito;
+
+-- UPDATE webaesthetic.cadastro SET fkFavorito = null WHERE idCadastro = 1;
