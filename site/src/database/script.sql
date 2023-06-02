@@ -3,6 +3,8 @@ CREATE DATABASE Webaesthetic;
 
 USE Webaesthetic;
 
+-- DROP DATABASE Webaesthetic;
+
 -- Tabela com informações do usuário
 CREATE TABLE Webaesthetic.Cadastro(
 	idCadastro INT PRIMARY KEY AUTO_INCREMENT,
@@ -16,12 +18,11 @@ CREATE TABLE Webaesthetic.Cadastro(
 );
 
 -- Tabela para usuário logar no blog
-CREATE TABLE Webaesthetic.Login(
-	idLogin INT,
+CREATE TABLE Webaesthetic.Online(
+	idOnline INT,
     fkCadastro INT,
-    PRIMARY KEY(idLogin, fkCadastro),
-    email VARCHAR(100),
-    senha VARCHAR(21)
+    PRIMARY KEY(idOnline, fkCadastro),
+    FOREIGN KEY(fkCadastro) REFERENCES Cadastro(idCadastro)
 );
 
 -- Tabela de comentários no blog
@@ -38,22 +39,22 @@ CREATE TABLE Webaesthetic.Favorito(
     nomeEstetica VARCHAR(45)
 );
 
--- Configuração de chave estrangeira (relação de Cadastro com Favorito)
-ALTER TABLE Webaesthetic.Cadastro ADD FOREIGN KEY(fkFavorito) REFERENCES webaesthetic.Favorito(idFavorito);
-
-SELECT * FROM Cadastro;
-SELECT * FROM Comentario;
-SELECT * FROM Login;
-SELECT * FROM Favorito;
-
-SELECT nome, fkFavorito, nomeEstetica FROM webaesthetic.cadastro RIGHT JOIN webaesthetic.favorito
-	ON fkFavorito = idFavorito;
-
 INSERT INTO Webaesthetic.Favorito(nomeEstetica) VALUES
 ('Old Web'),
 ('Y2K Millenium'),
 ('Frutiger Aero'),
 ('Vaporwave');
+
+-- Configuração de chave estrangeira (relação de Cadastro com Favorito)
+ALTER TABLE Webaesthetic.Cadastro ADD FOREIGN KEY(fkFavorito) REFERENCES webaesthetic.Favorito(idFavorito);
+
+SELECT * FROM webaesthetic.Cadastro;
+SELECT * FROM webaesthetic.Comentario;
+SELECT * FROM webaesthetic.Online;
+SELECT * FROM webaesthetic.Favorito;
+
+SELECT nome, fkFavorito, nomeEstetica FROM webaesthetic.cadastro RIGHT JOIN webaesthetic.favorito
+	ON fkFavorito = idFavorito;
 
 -- Configuração de privilégios do usuário
 GRANT USAGE ON webaesthetics.* TO 'adm_1'@'%';
@@ -61,5 +62,3 @@ GRANT ALL PRIVILEGES ON Webaesthetic.* TO adm_1;
 FLUSH PRIVILEGES;
 
 SHOW GRANTS FOR adm_1;
-
--- DROP DATABASE Webaesthetic;
