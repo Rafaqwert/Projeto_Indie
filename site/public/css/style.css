@@ -194,15 +194,34 @@ li {
     border-bottom: 1px solid #000;
 }
 
-.img {
+.content article {
+    height: 100%;
     width: 70%;
-    height: 70%;
-    border-radius: 50%;
-    /* background-image: url("../assets/imgs/ASCIIME2.png"); */
 }
 
-img {
+.content p {
+    padding: 5vh;
+}
+
+.content .div_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    width: 30%;
+}
+
+.content .img {
+    background-color: aqua;
+    height: auto;
+    width: auto;
+}
+
+.content img {
+    border-radius: 50%;
     object-fit: cover;
+    width: 40vh;
+    height: 40vh;
 }
 
 /* Fim social */
