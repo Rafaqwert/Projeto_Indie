@@ -41,9 +41,9 @@ CREATE TABLE Webaesthetic.Favorito(
 
 INSERT INTO Webaesthetic.Favorito(nomeEstetica) VALUES
 ('Nenhum'),
-('Old Web'),
-('Y2K Millenium'),
-('Frutiger Aero'),
+('Old_Web'),
+('Y2K_Millenium'),
+('Frutiger_Aero'),
 ('Vaporwave');
 
 INSERT INTO Cadastro(nome, email, senha, fkFavorito) VALUES 
@@ -69,7 +69,9 @@ SELECT nome, fkFavorito, nomeEstetica FROM webaesthetic.cadastro RIGHT JOIN weba
 	ON fkFavorito = idFavorito;
 -- quantidade de vezes que uma determinada estetica foi escolhida
 
-SELECT nomeEstetica, COUNT(fkFavorito) Votos FROM Cadastro JOIN Favorito ON fkFavorito = IdFavorito GROUP BY nomeEstetica;
+SELECT idfavorito, COUNT(fkFavorito)votos FROM Cadastro JOIN Favorito ON fkFavorito = IdFavorito GROUP BY idfavorito;
+
+-- Error Code: 1055. Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'webaesthetic.Favorito.idFavorito' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 
 -- Configuração de privilégios do usuário
 -- GRANT USAGE ON webaesthetics.* TO 'adm_1'@'%';
