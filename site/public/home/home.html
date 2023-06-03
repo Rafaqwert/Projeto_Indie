@@ -11,7 +11,7 @@
     <link rel="icon" type="image/x-icon" href="../assets/icons/world.ico">
 </head>
 
-<body>
+<body onload="atualizarPagina()">
     <!--Windows XP-->
     <section class="section_xp">
         <div class="div_windowXp">
@@ -25,35 +25,30 @@
                 </div>
 
                 <div class="div_headerBot">
-                    <div>
-                        <a href="">
-                            <p><u>C</u>onta</p>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="">
-                            <p><u>T</u>ópicos</p>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#div_home">
-                            <p><u>I</u>nicio</p>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="">
-                            <p><u>D</u>ados</p>
-                        </a>
-                    </div>
-                </div>
-
+                    <ul>
+                        <li><a href="">
+                                <p><u>C</u>onta</p>
+                            </a></li>
+                        <li><a href="#div_home">
+                                <p><u>Í</u>nicio</p>
+                            </a></li>
+                        <li><a href="">
+                                <p><u>T</u>ópicos</p>
+                            </a></li>
+                        <li><a href="">
+                                <p><u>V</u>otação</p>
+                            </a></li>
+                        <li><a href="">
+                                <p><u>C</u>omentários</p>
+                            </a></li>
+                    </ul>
             </header>
             <!--Fim header-->
 
             <!--Social-->
             <div class="div_home" id="div_home">
                 <div class="div_cape">
-                    <h1>Old web</h1>
+                    <h1>Bem-vindo <span id="span_user"></span></h1>
                 </div>
                 <div class="div_content">
                     <article>
@@ -124,26 +119,23 @@
                 </div>
 
                 <div class="div_headerBot">
-                    <div>
-                        <a href="">
-                            <p><u>C</u>onta</p>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="">
-                            <p><u>T</u>ópicos</p>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#div_home">
-                            <p><u>I</u>nicio</p>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="">
-                            <p><u>D</u>ados</p>
-                        </a>
-                    </div>
+                    <ul>
+                        <li><a href="">
+                                <p><u>C</u>onta</p>
+                            </a></li>
+                        <li><a href="#div_home">
+                                <p><u>Í</u>nicio</p>
+                            </a></li>
+                        <li><a href="">
+                                <p><u>T</u>ópicos</p>
+                            </a></li>
+                        <li><a href="">
+                                <p><u>V</u>otação</p>
+                            </a></li>
+                        <li><a href="">
+                                <p><u>C</u>omentários</p>
+                            </a></li>
+                    </ul>
                 </div>
             </header>
             <!-- Fim header -->
@@ -167,10 +159,11 @@
                         <div class="div_decor">
                             <div class="div_miniwindow">
                                 <div class="div_miniheader">
-
+                                    <img src="../assets/icons/explorer.ico">
+                                    <p>Internet</p>
                                 </div>
                                 <div class="div_minihome">
-
+                                    <img src="../assets/gifs/vapor_road.gif" class="road">
                                 </div>
                             </div>
                         </div>
@@ -179,10 +172,14 @@
                         <div class="div_decor">
                             <div class="div_miniwindow">
                                 <div class="div_miniheader">
-
+                                    <img src="../assets/icons/explorer.ico">
+                                    <p>Vaporman</p>
                                 </div>
                                 <div class="div_minihome">
-
+                                    <!-- <img src="../assets/imgs/vapor_bg.jpg" class="vapor_bg"> -->
+                                    <div class="div_vapor">
+                                        <img src="../assets/imgs/vapor_memo.png">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -209,26 +206,23 @@
                     </div>
 
                     <div class="div_headerBot">
-                        <div>
-                            <a href="">
-                                <p>Conta</p>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="">
-                                <p>Tópicos</p>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#div_home">
-                                <p>Inicio</p>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="">
-                                <p>Dados</p>
-                            </a>
-                        </div>
+                        <ul>
+                            <li><a href="">
+                                    <p>Conta</p>
+                                </a></li>
+                            <li><a href="#div_home">
+                                    <p>Ínicio</p>
+                                </a></li>
+                            <li><a href="">
+                                    <p>Tópicos</p>
+                                </a></li>
+                            <li><a href="">
+                                    <p>Votação</p>
+                                </a></li>
+                            <li><a href="">
+                                    <p>Comentários</p>
+                                </a></li>
+                        </ul>
                     </div>
                 </div>
             </header>
@@ -285,6 +279,16 @@
 </html>
 
 <script>
+
+    function atualizarPagina(){
+        let nomeVar = sessionStorage.NOME_USUARIO;
+        span_user.innerHTML = `${nomeVar}`
+    }
+
+
+    function atualizarGrafico() {
+
+    }
 
     const ctx = document.getElementById('myChart');
 

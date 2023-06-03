@@ -69,9 +69,17 @@ body {
     border-bottom: #c1c1c1 solid 1px;
 }
 
-.header_xp .div_headerBot div {
-    margin-left: 2vh;
+ul {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    padding-inline-start: 0;
 }
+
+li {
+    padding-left: 2vh;
+}
+
 
 .header_xp .div_headerBot p {
     padding: 1vh;
@@ -245,10 +253,6 @@ body {
     width: 100%;
 }
 
-.header_95 .div_headerBot div {
-    margin-left: 2vh;
-}
-
 .header_95 .div_headerBot p {
     padding: 1vh;
 }
@@ -323,9 +327,64 @@ body {
     height: 42vh;
     width: 42vh;
 
-    background-color: #bcbcbc;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    background: rgb(188,188,188);
+    background: linear-gradient(0deg, rgba(188,188,188,1) 98%, rgba(255,255,255,1) 100%);
 }
 
+.div_miniheader {
+    display: flex;
+    flex-direction: row;
+    width: 96%;
+    height: 10%;
+    background-color: #0000AA;
+    margin: 5px;
+    align-items: center;
+}
+
+.div_miniheader img {
+    height: 25px;
+    margin-left: 5px;
+}
+
+.div_miniheader p {
+    font-size: large;
+    color: #ffffff;
+    margin-left: 5px;
+}
+
+.div_minihome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 96%;
+    height: 85%;
+    margin: 5px;
+}
+
+.road {
+    object-fit: none;
+    height: 100%;
+    width: 100%;
+}
+
+.div_vapor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-image: url("../assets/imgs/vapor_bg.jpg");
+    background-repeat: no-repeat;
+    background-clip: content-box;
+    background-size: 160%;
+    background-position: 10% 10%;
+}
+
+.div_vapor img{
+    height: 200px;
+}
 /* =====================FIM SEÇÃO WINDOWS 95===================== */
 
 /* =====================SEÇÃO WINDOWS 7===================== */
@@ -384,9 +443,6 @@ body {
     border-bottom: 1px solid #000;
 }
 
-.header_7 .div_headerBot div {
-    margin-left: 2vh;
-}
 
 .header_7 .div_headerBot p {
     padding: 1vh;
@@ -456,7 +512,7 @@ body {
 
 .radios {
     margin: 2vh;
-    height: 30vh;
+    height: 35vh;
 }
 
 .radios input{
