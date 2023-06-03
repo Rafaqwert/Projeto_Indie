@@ -68,6 +68,7 @@ SELECT * FROM webaesthetic.Favorito;
 SELECT nome, fkFavorito, nomeEstetica FROM webaesthetic.cadastro RIGHT JOIN webaesthetic.favorito
 	ON fkFavorito = idFavorito;
 -- quantidade de vezes que uma determinada estetica foi escolhida
+
 SELECT nomeEstetica, COUNT(fkFavorito) Votos FROM Cadastro JOIN Favorito ON fkFavorito = IdFavorito GROUP BY nomeEstetica;
 
 -- Configuração de privilégios do usuário
