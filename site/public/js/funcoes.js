@@ -32,15 +32,15 @@ function limparSessao() {
 //Função de carregamento da página
 function aguardar() {
     //Mostra na tela a div Aguardar que contém o gif de 'loading'
-    //var divAguardar = document.getElementById("div_aguardar");
-    //divAguardar.style.display = "flex";
+    var divAguardar = document.getElementById("div_aguardar");
+    divAguardar.style.display = "flex";
     console.log('carregando');
 }
 
 function finalizarAguardar(texto) {
     //Esconde na tela a div Aguardar que contém o gif de 'loading'
-    //var divAguardar = document.getElementById("div_aguardar");
-    //divAguardar.style.display = "none";
+    var divAguardar = document.getElementById("div_aguardar");
+    divAguardar.style.display = "none";
     console.log('fim carregando');
 
     var divErrosLogin = document.getElementById("div_erros_login");
