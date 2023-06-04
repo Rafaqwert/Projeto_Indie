@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap');
+
 * {
     font-family: 'Tahoma';
     margin: 0;
@@ -273,6 +275,7 @@ li {
     background-color: #bcbcbc;
     height: 88vh;
     padding-top: 10vh;
+    color: #ff0000;
 }
 
 .div_window95 .div_home .div_content {
@@ -286,6 +289,23 @@ li {
 
 .div_window95 .div_home .div_content img {
     height: 150px;
+}
+
+.div_window95 .div_title {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: center;
+}
+
+.div_window95 .div_text {
+    padding: 5vh;
+}
+
+.div_window95 h1 {
+    font-family: 'Old Standard TT', serif;
+    font-size: 100px;
+    margin-right: 4vh; 
 }
 
 .div_window95 .div_home2 {
