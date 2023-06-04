@@ -1,11 +1,11 @@
 var database = require("../database/config");
 
-function buscarUltimasMedidas(idfavorito, fkFavorito){
+function buscarUltimasMedidas(){
     
     instrucaoSql = ''
 
-    instrucaoSql = `SELECT ${idfavorito}, COUNT(${fkFavorito})votos FROM Cadastro JOIN 
-    Favorito ON fkFavorito = IdFavorito GROUP BY ${fkFavorito};`;
+    instrucaoSql = `SELECT nomeEstetica, COUNT(fkFavorito)votos FROM Cadastro JOIN 
+    Favorito ON fkFavorito = IdFavorito GROUP BY fkFavorito;`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
