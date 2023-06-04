@@ -1,5 +1,5 @@
 -- Documento de apoio para criação de banco e tabelas em outras máquinas
-CREATE DATABASE Webaesthetic;
+-- CREATE DATABASE Webaesthetic;
 
 USE Webaesthetic;
 
@@ -12,8 +12,7 @@ CREATE TABLE Webaesthetic.Cadastro(
     email VARCHAR(100),
     senha VARCHAR(21),
     biografia VARCHAR(100),
-    genero CHAR(1),
-	CONSTRAINT CHK_GEN CHECK(genero IN('m','f','n')),
+    sexo CHAR(1),
     fkFavorito INT
 );
 
@@ -69,7 +68,7 @@ SELECT nome, fkFavorito, nomeEstetica FROM webaesthetic.cadastro RIGHT JOIN weba
 	ON fkFavorito = idFavorito;
 -- quantidade de vezes que uma determinada estetica foi escolhida
 
-SELECT idfavorito, COUNT(fkFavorito)votos FROM Cadastro JOIN Favorito ON fkFavorito = IdFavorito GROUP BY idfavorito;
+SELECT idfavorito, COUNT(fkFavorito)votos FROM Cadastro JOIN Favorito ON fkFavorito = IdFavorito GROUP BY fkFavorito;
 
 -- Error Code: 1055. Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'webaesthetic.Favorito.idFavorito' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 
