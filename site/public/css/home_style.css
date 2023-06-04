@@ -28,7 +28,7 @@ body {
 
 /*Header*/
 .header_xp {
-    /* position: fixed; */
+    position: fixed;
     height: 12vh;
     width: 100%;
 }
@@ -99,8 +99,8 @@ li {
     flex-direction: column;
     height: 88vh;
     margin: 0vh 1vh;
-    /* padding-top: 12vh; */
     background-color: #F2F2EC;
+    padding-top: 12vh;
 }
 
 .div_windowXp .div_home .div_cape {
@@ -215,9 +215,11 @@ li {
 
 /* Header */
 .header_95 {
-    /* position: fixed; */
+    position: static;
     height: 16vh;
     width: 100%;
+    background-color: #bcbcbc;
+    background: linear-gradient(180deg, rgb(228, 228, 228) 5%, rgba(188, 188, 188, 1) 14%, rgba(188, 188, 188, 1) 30%);
 }
 
 .header_95 .div_header {
@@ -270,6 +272,7 @@ li {
     align-items: center;
     background-color: #bcbcbc;
     height: 88vh;
+    padding-top: 15vh;
 }
 
 .div_window95 .div_home .div_content {
@@ -401,7 +404,7 @@ li {
 
 /*header*/
 .header_7 {
-    /* position: fixed; */
+    position: static;
     height: 12vh;
     width: 100%;
 }

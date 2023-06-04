@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt" id="window_html">
 
 <head>
     <meta charset="UTF-8">
@@ -16,7 +16,7 @@
     <section class="section_xp">
         <div class="div_windowXp">
             <!--Header-->
-            <header class="header_xp">
+            <header class="header_xp" id="header1">
                 <div class="div_header">
                     <div class="div_headerTop">
                         <img src="../assets/icons/maquina.ico">
@@ -110,7 +110,7 @@
     <Section class="section_95">
         <div class="div_window95">
             <!--Header-->
-            <header class="header_95">
+            <header class="header_95" id="header2">
                 <div class="div_header">
                     <div class="div_headerTop">
                         <img src="../assets/icons/maquinario.ico">
@@ -198,8 +198,8 @@
     <section class="section_7">
         <div class="div_window7">
             <!--Header-->
-            <header class="header_7">
-                <div class="div_header">
+            <header class="header_7" >
+                <div class="div_header" id="header3">
                     <div class="div_headerTop">
                         <img src="../assets/icons/computador.ico">
                         <p>Windows 7</p>
@@ -293,6 +293,32 @@
         obterDadosGraficos(4)
     }
 
+    window.addEventListener("scroll", function () {
+        var header1 = document.getElementById("header1");
+        var header2 = document.getElementById("header2");
+        var header3 = document.getElementById("header3");
+
+        var windowHtml = document.getElementById("window_html");
+        var heightWindow = windowHtml.offsetHeight;
+
+        if (window.pageYOffset < (190 * heightWindow / 100)) {
+            header1.style.position = "fixed";
+            header1.style.top = "0";
+            header2.style.position = "static";
+            header3.style.position = "static";
+        }
+        else if (window.pageYOffset < (390 * heightWindow / 100)) {
+            header2.style.position = "fixed";
+            header2.style.top = "0";
+            header1.style.display = "static";
+            header3.style.position = "static";
+        } else if (window.pageYOffset >= 2530){
+            header3.style.position = "fixed";
+            header3.style.top = "0";
+            header1.style.position = "static";
+            header2.style.position = "static";
+        }
+    });
 
     // const ctx = document.getElementById('myChart');
 
@@ -332,7 +358,7 @@
     function obterDadosGrafico(idFavorito) {
 
 
-        fetch(`/medidas/ultimas`, {cache: 'no-store' }).then(function (response) {
+        fetch(`/medidas/ultimas`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
@@ -365,19 +391,19 @@
                 borderWidth: 1
             },
             {
-            //dados Y2K
+                //dados Y2K
                 label: 'Y2K',
                 data: [],
                 borderWidth: 1
             },
             {
-            //dados Frutiger aero
+                //dados Frutiger aero
                 label: 'Frutiger aero',
                 data: [],
                 borderWidth: 1
             },
             {
-            //dados Vaporwave
+                //dados Vaporwave
                 label: 'Vaporwave',
                 data: [],
                 borderWidth: 1
