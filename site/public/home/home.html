@@ -26,19 +26,15 @@
 
                 <div class="div_headerBot">
                     <ul>
-                        <li><a href="">
+                        <li><a href="conta.html">
                                 <p><u>C</u>onta</p>
                             </a></li>
                         <li><a href="#div_home">
                                 <p><u>Í</u>nicio</p>
-                            </a></li>
-                        <li><a href="">
-                                <p><u>T</u>ópicos</p>
-                            </a></li>
-                        <li><a href="">
+                        <li><a href="#div_quiz">
                                 <p><u>V</u>otação</p>
                             </a></li>
-                        <li><a href="">
+                        <li><a href="comentarios.html">
                                 <p><u>C</u>omentários</p>
                             </a></li>
                     </ul>
@@ -120,19 +116,16 @@
 
                 <div class="div_headerBot">
                     <ul>
-                        <li><a href="">
+                        <li><a href="conta.html">
                                 <p><u>C</u>onta</p>
                             </a></li>
                         <li><a href="#div_home">
                                 <p><u>Í</u>nicio</p>
                             </a></li>
-                        <li><a href="">
-                                <p><u>T</u>ópicos</p>
-                            </a></li>
-                        <li><a href="">
+                        <li><a href="#div_quiz">
                                 <p><u>V</u>otação</p>
                             </a></li>
-                        <li><a href="">
+                        <li><a href="comentarios.html">
                                 <p><u>C</u>omentários</p>
                             </a></li>
                     </ul>
@@ -198,7 +191,7 @@
     <section class="section_7">
         <div class="div_window7">
             <!--Header-->
-            <header class="header_7" >
+            <header class="header_7">
                 <div class="div_header" id="header3">
                     <div class="div_headerTop">
                         <img src="../assets/icons/computador.ico">
@@ -207,19 +200,16 @@
 
                     <div class="div_headerBot">
                         <ul>
-                            <li><a href="">
+                            <li><a href="conta.html">
                                     <p>Conta</p>
                                 </a></li>
                             <li><a href="#div_home">
                                     <p>Ínicio</p>
                                 </a></li>
-                            <li><a href="">
-                                    <p>Tópicos</p>
-                                </a></li>
-                            <li><a href="">
+                            <li><a href="#div_quiz">
                                     <p>Votação</p>
                                 </a></li>
-                            <li><a href="">
+                            <li><a href="comentarios.html">
                                     <p>Comentários</p>
                                 </a></li>
                         </ul>
@@ -246,7 +236,7 @@
                 </div>
             </div>
 
-            <div class="div_quiz">
+            <div class="div_quiz" id="div_quiz">
                 <div class="div_questions">
                     <fieldset class="radios">
                         <legend>Escolha sua estética favorita</legend>
@@ -282,16 +272,9 @@
 
     span_user.innerHTML = sessionStorage.NOME_USUARIO;
 
-    let proximaAtualizacao;
-
     window.onload = obterDadosGrafico();
 
-    function obterDadosGraficos() {
-        obterDadosGraficos(1)
-        obterDadosGraficos(2)
-        obterDadosGraficos(3)
-        obterDadosGraficos(4)
-    }
+    // setInterval(atualizarGrafico(meuGrafico), 8000);
 
     window.addEventListener("scroll", function () {
         var header1 = document.getElementById("header1");
@@ -301,38 +284,24 @@
         var windowHtml = document.getElementById("window_html");
         var heightWindow = windowHtml.offsetHeight;
 
-        if (window.pageYOffset < (190 * heightWindow / 100)) {
+        if (window.pageYOffset < (192 * heightWindow / 100)) {
             header1.style.position = "fixed";
             header1.style.top = "0";
             header2.style.position = "static";
             header3.style.position = "static";
         }
-        else if (window.pageYOffset < (390 * heightWindow / 100)) {
+        else if (window.pageYOffset < (395 * heightWindow / 100)) {
             header2.style.position = "fixed";
             header2.style.top = "0";
             header1.style.display = "static";
             header3.style.position = "static";
-        } else if (window.pageYOffset >= 2530){
+        } else if (window.pageYOffset >= (395 * heightWindow / 100)) {
             header3.style.position = "fixed";
             header3.style.top = "0";
             header1.style.position = "static";
             header2.style.position = "static";
         }
     });
-
-    // const ctx = document.getElementById('myChart');
-
-    // new Chart(ctx, {
-    //     type: 'pie',
-    //     data: {
-    //         labels: ['Old web', 'Y2K', 'Frutiger aero', 'Vaporwave'],
-    //         datasets: [{
-    //             label: 'Popularidade da estética',
-    //             data: [],
-    //             borderWidth: 1
-    //         }]
-    //     }
-    // });
 
     function favoritar(fav) {
 
@@ -352,99 +321,74 @@
                 favServer: favorito
             })
         })
+
+        window.location.reload();
         return false;
     }
 
-    function obterDadosGrafico(idFavorito) {
-
+    function obterDadosGrafico() {
 
         fetch(`/medidas/ultimas`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    resposta.reverse();
 
-                    plotarGrafico(resposta);
+                    const ctx = document.getElementById('myChart');
+
+                    new Chart(ctx, {
+                        type: 'pie',
+                        data: {
+                            labels: [resposta[1].nomeEstetica, resposta[2].nomeEstetica, resposta[3].nomeEstetica, resposta[4].nomeEstetica],
+                            datasets: [{
+                                label: 'Popularidade da estética',
+                                data: [resposta[1].votos, resposta[2].votos, resposta[3].votos, resposta[4].votos],
+                                borderWidth: 1
+                            }]
+                        }
+                    });
 
                 });
+
+                
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
             }
         }).catch(function (error) {
             console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
         });
-    }
-
-
-    function plotarGrafico(resposta) {
-
-        console.log('iniciando plotagem do gráfico...');
-
-        let labels = [];
-
-        let dados = {
-            //dados Old web
-            labels: labels,
-            datasets: [{
-                label: 'Old web',
-                data: [],
-                borderWidth: 1
-            },
-            {
-                //dados Y2K
-                label: 'Y2K',
-                data: [],
-                borderWidth: 1
-            },
-            {
-                //dados Frutiger aero
-                label: 'Frutiger aero',
-                data: [],
-                borderWidth: 1
-            },
-            {
-                //dados Vaporwave
-                label: 'Vaporwave',
-                data: [],
-                borderWidth: 1
-            }]
-        };
-
-        console.log('----------------------------------------------')
-        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
-        console.log(resposta)
-
-        // Inserindo valores recebidos em estrutura para plotar o gráfico
-        for (i = 0; i < resposta.length; i++) {
-            var registro = resposta[i];
-            labels.push();
-            dados.datasets[0].data.push(registro.Old_Web);
-            dados.datasets[1].data.push(registro.Y2K_Millenium);
-            dados.datasets[2].data.push(registro.Frutiger_Aero);
-            dados.datasets[3].data.push(registro.Vaporwave);
-        }
-
-        console.log('----------------------------------------------')
-        console.log('O gráfico será plotado com os respectivos valores:')
-        console.log('Labels:')
-        console.log(labels)
-        console.log('Dados:')
-        console.log(dados.datasets)
-        console.log('----------------------------------------------')
-
-        const config = {
-            type: 'pie',
-            data: dados,
-        };
-
-        let myChart = new Chart(
-            ducument.getElementById(`myChart`),
-            config
-        );
-        // setTimeout(() => atualizarGrafico(dados, myChart), 2000);
-    }
-
-    function atualizarGrafico() {
 
     }
+
+    // function atualizarGrafico(chart) {
+
+
+    //     fetch(`/medidas/ultimas`, { cache: 'no-store' }).then(function (response) {
+    //         if (response.ok) {
+    //             response.json().then(function (resposta) {
+
+                    
+    //                 chart.data.datasets[0].shift();
+    //                 chart.data.datasets[0].push(resposta[1].votos);
+                   
+    //                 chart.datasets[1].data.shift();
+    //                 chart.datasets[1].data.push(resposta[2].votos);
+
+    //                 chart.datasets[2].data.shift();
+    //                 chart.datasets[2].data.push(resposta[3].votos);
+
+    //                 chart.datasets[3].data.shift();
+    //                 chart.datasets[3].data.push(resposta[4].votos);
+
+    //                 chart.update();
+
+    //             });
+
+    //         } else {
+    //             console.error('Não foi possível atualizar ou erro na API');
+    //         }
+    //     }).catch(function (error) {
+    //         console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+    //     });
+
+    // }
 </script>
