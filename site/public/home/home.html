@@ -11,7 +11,7 @@
     <link rel="icon" type="image/x-icon" href="../assets/icons/world.ico">
 </head>
 
-<body onload="atualizarPagina()">
+<body>
     <!--Windows XP-->
     <section class="section_xp">
         <div class="div_windowXp">
@@ -280,29 +280,33 @@
 
 <script>
 
-    function atualizarPagina(){
-        let nomeVar = sessionStorage.NOME_USUARIO;
-        span_user.innerHTML = `${nomeVar}`
+    span_user.innerHTML = sessionStorage.NOME_USUARIO;
+
+    let proximaAtualizacao;
+
+    window.onload = obterDadosGrafico();
+
+    function obterDadosGraficos() {
+        obterDadosGraficos(1)
+        obterDadosGraficos(2)
+        obterDadosGraficos(3)
+        obterDadosGraficos(4)
     }
 
 
-    function atualizarGrafico() {
+    // const ctx = document.getElementById('myChart');
 
-    }
-
-    const ctx = document.getElementById('myChart');
-
-    new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: ['Old web', 'Y2K', 'Frutiger aero', 'Vaporwave'],
-            datasets: [{
-                label: 'Popularidade da estética',
-                data: [],
-                borderWidth: 1
-            }]
-        }
-    });
+    // new Chart(ctx, {
+    //     type: 'pie',
+    //     data: {
+    //         labels: ['Old web', 'Y2K', 'Frutiger aero', 'Vaporwave'],
+    //         datasets: [{
+    //             label: 'Popularidade da estética',
+    //             data: [],
+    //             borderWidth: 1
+    //         }]
+    //     }
+    // });
 
     function favoritar(fav) {
 
@@ -325,7 +329,96 @@
         return false;
     }
 
-    function obterDadosGrafico() {
+    function obterDadosGrafico(idFavorito) {
+
+
+        fetch(`/medidas/ultimas`, {cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        }).catch(function (error) {
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        });
+    }
+
+
+    function plotarGrafico(resposta) {
+
+        console.log('iniciando plotagem do gráfico...');
+
+        let labels = [];
+
+        let dados = {
+            //dados Old web
+            labels: labels,
+            datasets: [{
+                label: 'Old web',
+                data: [],
+                borderWidth: 1
+            },
+            {
+            //dados Y2K
+                label: 'Y2K',
+                data: [],
+                borderWidth: 1
+            },
+            {
+            //dados Frutiger aero
+                label: 'Frutiger aero',
+                data: [],
+                borderWidth: 1
+            },
+            {
+            //dados Vaporwave
+                label: 'Vaporwave',
+                data: [],
+                borderWidth: 1
+            }]
+        };
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push();
+            dados.datasets[0].data.push(registro.Old_Web);
+            dados.datasets[1].data.push(registro.Y2K_Millenium);
+            dados.datasets[2].data.push(registro.Frutiger_Aero);
+            dados.datasets[3].data.push(registro.Vaporwave);
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        const config = {
+            type: 'pie',
+            data: dados,
+        };
+
+        let myChart = new Chart(
+            ducument.getElementById(`myChart`),
+            config
+        );
+        // setTimeout(() => atualizarGrafico(dados, myChart), 2000);
+    }
+
+    function atualizarGrafico() {
 
     }
 </script>

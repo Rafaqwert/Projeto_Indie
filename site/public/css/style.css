@@ -50,7 +50,6 @@ header {
 
 .div_headerTop img {
     height: 5vh;
-
     margin: 1vh;
 }
 
@@ -157,7 +156,7 @@ li {
     width: 50%;
 }
 
-.img {
+.div_home .img {
     height: 90%;
     width: 80%;
     border-left: 1vh solid #a9a9a9;
@@ -178,8 +177,11 @@ li {
     height: 88vh;
     margin: 0vw 1vh;
     padding-top: 12vh;
-    background-color: #a9a9a9;
-
+    background-color: #F2F2EC;
+    background-image:
+    linear-gradient(to bottom, rgba(178, 198, 247, 0.896), rgba(125, 255, 138, 0.73)),
+    url("../assets/imgs/holographic_waves.jpg");
+    background-size: 25%;
 }
 
 .content {
@@ -187,7 +189,7 @@ li {
     flex-direction: row;
     width: 160vh;
     height: 80vh;
-    background-color: #a9a9a9;
+    background-color: #9a9a9ab9;
     border-left: 2px solid #e4e4e4;
     border-top: 2px solid #e4e4e4;
     border-right: 1px solid #000;
@@ -199,8 +201,9 @@ li {
     width: 70%;
 }
 
-.content p {
+.content p, .content h1 {
     padding: 5vh;
+    text-shadow: #F2F2EC 2px 2px;
 }
 
 .content .div_img {
@@ -211,14 +214,9 @@ li {
     width: 30%;
 }
 
-.content .img {
-    background-color: aqua;
-    height: auto;
-    width: auto;
-}
-
 .content img {
     border-radius: 50%;
+    border: 2px solid #ffffff;
     object-fit: cover;
     width: 40vh;
     height: 40vh;
@@ -227,18 +225,69 @@ li {
 /* Fim social */
 
 /* Footer */
-.div_footer {
+footer {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 15vh;
+    flex-direction: column;
     background: rgb(94,168,255);
-    background: linear-gradient(180deg, rgba(94,168,255,1) 0%, rgba(0,85,234,1) 21%);
+    background: linear-gradient(180deg, rgba(94,168,255,1) 0%, rgba(0,85,234,1) 5%);
 }
 
-.div_footer p {
+footer p {
     text-shadow: #000 1px 1px;
     color: white;
-    padding: 20px;
+    margin: 1vh;
+    margin-left: 3vh;
 }
+
+footer h2 {
+    color: white;
+    text-shadow: #000 1px 1px;
+    margin: 2vh;
+}
+
+.div_footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 25vh;
+    flex-direction: row;
+}
+
+.div_page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.div_personal {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.div_social {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10vh;
+    height: 100%;
+}
+
+.div_social span {
+    color: white;
+    text-shadow: #000 1px 1px;
+    margin: 1vh;
+}
+
+.div_social img {
+    height: 25px;
+    width: 25px;
+    margin-left: 5vh;
+}
+
+.div_social .div_img {
+    display: flex;
+    flex-direction: row;
+    margin-left: 3vh;
+}
+
 /* Fim footer */
