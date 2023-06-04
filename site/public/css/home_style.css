@@ -499,7 +499,8 @@ li {
 
 .div_questions {
     display: flex;
-    width: 25%;
+    align-items: center;
+    width: 15%;
     background-color: #e1e1e1;
 }
 

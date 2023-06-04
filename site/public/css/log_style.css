@@ -93,6 +93,7 @@ body {
 }
 
 .div_logBot .div_check {
+    margin-bottom: 5vh;
     display: flex;
     flex-direction: row;
 }
@@ -105,4 +106,16 @@ body {
 button {
     height: 30px;
     width: 90px;
+}
+
+#div_aguardar {
+    display: none;
+    position: absolute;
+    justify-content: center;
+    margin-top: 16vh;
+    width: 100%;
+}
+
+#div_aguardar img{
+    height: 100px;
 }

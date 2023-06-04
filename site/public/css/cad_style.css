@@ -141,3 +141,13 @@ button {
     width: 90px;
 }
 
+#div_aguardar {
+    display: none;
+    position: absolute;
+    justify-content: center;
+    width: 100%;
+}
+
+#div_aguardar img{
+    height: 100px;
+}
