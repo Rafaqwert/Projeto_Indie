@@ -1,6 +1,6 @@
 * {
     font-family: 'Tahoma';
-
+    text-decoration: none;
     margin: 0;
 }
 
@@ -83,7 +83,6 @@ li {
 
 .div_headerBot a {
     color: #000;
-    text-decoration: none;
 }
 
 /* ==============================Fim header========================= */
@@ -128,19 +127,22 @@ li {
 }
 
 .div_article .div_text p {
-    font-size: 24px;
+    font-size: 18px;
+    padding-right: 20vh;
 }
 
 .div_article .div_btn {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 
     width: 100%;
     margin-top: 3vh;
+    margin-right: 40vh;
 }
 
 .div_article .div_btn button{
-    height: 5vh;
+    height: 7vh;
+    width: 9vw;
     border: #69a0ff solid 1px;
     border-radius: 2px;
 
@@ -168,6 +170,11 @@ li {
     width: 100%;
     object-fit: cover;
 }
+span { font-size: 20px;}
+.spn1 { -webkit-text-stroke: 1px black; color: #ff0000;}
+.spn2 { -webkit-text-stroke: 1px black;color: #002aff;}
+.spn3 { -webkit-text-stroke: 1px black; color: #00ff11;}
+.spn4 { -webkit-text-stroke: 1px black; color: #ff00f7;}
 
 /* ------------------------Sobre */
 .div_sobre {
@@ -179,7 +186,7 @@ li {
     padding-top: 12vh;
     background-color: #F2F2EC;
     background-image:
-    linear-gradient(to bottom, rgba(178, 198, 247, 0.896), rgba(125, 255, 138, 0.73)),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.959), rgba(125, 255, 138, 0.73)),
     url("../assets/imgs/holographic_waves.jpg");
     background-size: 25%;
 }

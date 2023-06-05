@@ -275,7 +275,6 @@ li {
     background-color: #bcbcbc;
     height: 88vh;
     padding-top: 10vh;
-    color: #ff0000;
 }
 
 .div_window95 .div_home .div_content {
@@ -287,7 +286,7 @@ li {
     border-top: 0.8vh solid #4f4f4f;
 }
 
-.div_window95 .div_home .div_content img {
+.div_window95 .div_title img {
     height: 150px;
 }
 
@@ -296,10 +295,38 @@ li {
     flex-direction: row;
     align-items: end;
     justify-content: center;
+    color: #ff0000;
 }
 
 .div_window95 .div_text {
-    padding: 5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 70%;
+    width: 100%;
+    color: #ffff00;
+}
+
+.div_window95 .div_text img{
+    height: 150px;
+    margin-top: 20vh;
+}
+
+.div_line{
+    display: flex;
+    justify-content: center;
+}
+.line {
+    height: 1vh;
+}
+
+.div_window95 article {
+    padding: 10vh;
+    font-size: 14px;
+}
+
+.div_window95 article p {
+    margin-bottom: 2vh;
 }
 
 .div_window95 h1 {

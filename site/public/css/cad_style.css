@@ -1,6 +1,6 @@
 * {
     font-family: 'Tahoma';
-
+    text-decoration: none;
     margin: 0;
 }
 
@@ -131,9 +131,12 @@ body {
 
 .div_btn {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding-top: 5vh;
     width: 200%;
+    font-size: 12px;
 }
 
 button {

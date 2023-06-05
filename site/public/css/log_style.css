@@ -1,6 +1,6 @@
 * {
     font-family: 'Tahoma';
-
+    text-decoration: none;
     margin: 0;
 }
 
@@ -100,6 +100,13 @@ body {
 
 .div_check p{
     padding-left: 1vh;
+    font-size: 12px;
+}
+
+.div_btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-size: 12px;
 }
 
