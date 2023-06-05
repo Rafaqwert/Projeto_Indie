@@ -9,9 +9,10 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="../css/home_style.css">
     <link rel="icon" type="image/x-icon" href="../assets/icons/world.ico">
+    <script src="../js/funcoes.js"></script>
 </head>
 
-<body>
+<body onload="validarSessao()">
     <!--Windows XP-->
     <section class="section_xp">
         <div class="div_windowXp">
@@ -34,7 +35,7 @@
                         <li><a href="#div_quiz">
                                 <p><u>V</u>otação</p>
                             </a></li>
-                        <li><a href="../Index.html">
+                        <li><a href="../Index.html" onclick="limparSessao()">
                                 <p>Sair</p>
                             </a></li>
                     </ul>
@@ -124,7 +125,7 @@
                         <li><a href="#div_quiz">
                                 <p><u>V</u>otação</p>
                             </a></li>
-                        <li><a href="../Index.html">
+                        <li><a href="../Index.html" onclick="limparSessao()">
                                 <p>Sair</p>
                             </a></li>
                     </ul>
@@ -249,7 +250,7 @@
                             <li><a href="#div_quiz">
                                     <p>Votação</p>
                                 </a></li>
-                                <li><a href="../Index.html">
+                                <li><a href="../Index.html" onclick="limparSessao()">
                                     <p>Sair</p>
                                 </a></li>
                         </ul>

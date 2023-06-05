@@ -42,9 +42,18 @@ function favoritar(idCadastro, fav) {
     return database.executar(instrucao);
 }
 
+function entrarOnline(idCadastro) {
+
+    var instrucao = `INSERT INTO webaesthetic.Online(fkCadastro) VALUES (${idCadastro});`
+
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
     favoritar,
+    entrarOnline
 };

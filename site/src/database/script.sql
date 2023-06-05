@@ -18,9 +18,8 @@ CREATE TABLE Webaesthetic.Cadastro(
 
 -- Tabela para usuário logar no blog
 CREATE TABLE Webaesthetic.Online(
-	idOnline INT,
+	idOnline INT PRIMARY KEY AUTO_INCREMENT,
     fkCadastro INT,
-    PRIMARY KEY(idOnline, fkCadastro),
     FOREIGN KEY(fkCadastro) REFERENCES Cadastro(idCadastro)
 );
 
@@ -29,6 +28,8 @@ CREATE TABLE Webaesthetic.Favorito(
 	idFavorito INT PRIMARY KEY AUTO_INCREMENT,
     nomeEstetica VARCHAR(45)
 );
+
+ALTER TABLE Webaesthetic.Cadastro ADD FOREIGN KEY(fkFavorito) REFERENCES webaesthetic.Favorito(idFavorito);
 
 INSERT INTO Webaesthetic.Favorito(nomeEstetica) VALUES
 ('Nenhum'),
@@ -48,8 +49,10 @@ INSERT INTO Cadastro(nome, email, senha, fkFavorito) VALUES
 ('H', 'h@email', '123', 5),
 ('I', 'i@email', '123', 2);
 
+INSERT INTO webaesthetic.Online(fkCadastro) VALUES (1);
+
 -- Configuração de chave estrangeira (relação de Cadastro com Favorito)
-ALTER TABLE Webaesthetic.Cadastro ADD FOREIGN KEY(fkFavorito) REFERENCES webaesthetic.Favorito(idFavorito);
+
 
 SELECT * FROM webaesthetic.Cadastro;
 SELECT * FROM webaesthetic.Online;

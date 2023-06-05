@@ -13,8 +13,7 @@ function validarSessao() {
 
     //Se o campo de email e de nome ser diferente de vazio, então entre
     if (email != null && nome != null) {
-        window.alert(`Olá ${nome}!`);
-
+    //validado
 
     } else {//Se não, volta para login
         window.location = "../login.html";
@@ -51,6 +50,28 @@ function finalizarAguardar(texto) {
 }
 //========================================================//
 
+// function entrarOnline(resposta) {
+
+//     var idUsuario = sessionStorage.ID_USUARIO;
+
+//     fetch("/usuarios/entrarOnline", {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json"
+//         },
+//         body: JSON.stringify({
+//             idUser: idUsuario
+//         })
+//     }).then(function (resposta) {
+//         console.log("ESTOU NO THEN DO entrar()!")
+
+        
+// }).catch(function (erro) {
+//         console.log(erro);
+//     });
+
+//     return false;
+// }
 
 //===========================MODAL======================//
 // function mostrarModal() {

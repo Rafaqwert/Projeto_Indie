@@ -134,10 +134,32 @@ function favoritar(req, res) {
     }
 }
 
+function entrarOnline(req, res) {
+
+    var idCadastro = req.body.idUser;
+
+    usuarioModel.entrarOnline(idCadastro)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao entar online! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+}
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
     testar,
     favoritar,
+    entrarOnline
 }

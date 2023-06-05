@@ -24,4 +24,8 @@ router.post("/favoritar", function (req, res) {
     usuarioController.favoritar(req, res);
 })
 
+router.post("/entrarOnline", function (req, res) {
+    usuarioController.entrarOnline(req, res);
+})
+
 module.exports = router;
