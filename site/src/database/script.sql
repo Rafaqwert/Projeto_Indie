@@ -1,5 +1,5 @@
 -- Documento de apoio para criação de banco e tabelas em outras máquinas
--- CREATE DATABASE Webaesthetic;
+CREATE DATABASE Webaesthetic;
 
 USE Webaesthetic;
 
@@ -22,14 +22,6 @@ CREATE TABLE Webaesthetic.Online(
     fkCadastro INT,
     PRIMARY KEY(idOnline, fkCadastro),
     FOREIGN KEY(fkCadastro) REFERENCES Cadastro(idCadastro)
-);
-
--- Tabela de comentários no blog
-CREATE TABLE Webaesthetic.Comentario(
-	idComentario INT PRIMARY KEY AUTO_INCREMENT,
-    comentario VARCHAR(1000),
-    fkCadastro INT,
-    FOREIGN KEY(fkCadastro) REFERENCES Webaesthetic.Cadastro(idCadastro)
 );
 
 -- Tabela de favoritos (do questionario do blog)
@@ -60,7 +52,6 @@ INSERT INTO Cadastro(nome, email, senha, fkFavorito) VALUES
 ALTER TABLE Webaesthetic.Cadastro ADD FOREIGN KEY(fkFavorito) REFERENCES webaesthetic.Favorito(idFavorito);
 
 SELECT * FROM webaesthetic.Cadastro;
-SELECT * FROM webaesthetic.Comentario;
 SELECT * FROM webaesthetic.Online;
 SELECT * FROM webaesthetic.Favorito;
 
@@ -68,7 +59,7 @@ SELECT nome, fkFavorito, nomeEstetica FROM webaesthetic.cadastro RIGHT JOIN weba
 	ON fkFavorito = idFavorito;
 -- quantidade de vezes que uma determinada estetica foi escolhida
 
-SELECT idfavorito, COUNT(fkFavorito)votos FROM Cadastro JOIN Favorito ON fkFavorito = IdFavorito GROUP BY fkFavorito;
+SELECT nomeEstetica, COUNT(fkFavorito)votos FROM Cadastro JOIN Favorito ON fkFavorito = IdFavorito GROUP BY fkFavorito;
 
 -- Error Code: 1055. Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'webaesthetic.Favorito.idFavorito' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 

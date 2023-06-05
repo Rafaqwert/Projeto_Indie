@@ -4,11 +4,80 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" type="image/x-icon" href="../assets/icons/world.ico">
     <title>Conta</title>
 </head>
 <body>
-    
-</body>
+    <div class="div_windowConta">
+        <!--Header-->
+        <header>
+            <div class="div_header">
+                <div class="div_headerTop">
+                    <img src="../assets/icons/lupa.ico">
+                    <p>Web Aesthetics</p>
+                </div>
+            </div>
+
+            <div class="div_headerBot">
+                <ul>
+                    <li><a href="home.html">
+                            <p><u>V</u>oltar</p>
+                        </a></li>
+                </ul>
+
+        </header>
+        <!--Fim header-->
+
+        <!--Social-->
+        <!--Home-->
+        <div class="div_home" id="div_home">
+            <div class="div_articleConta">
+                <div class="div_titleConta">
+                    <h3>Nome do usuário:</h3>
+                    <span id="nome"></span>
+                    
+                    <h3>Email do usuário:</h3>
+                    <span id="email"></span>
+
+                    <h3>Sexo:</h3>
+                    <span id="sexo"></span>
+
+                    <h3>Biografia do usuário:</h3>
+                    <span id="bio"></span>
+                </div>
+                <div class="div_text">
+                    <p>
+                        
+                    </p>
+                </div>
+                
+            </div>
+            <div class="div_img">
+                <div class="img">
+                    <img src="../assets/imgs/rosewave.jpg" alt="Fundo Windows XP">
+                </div>
+            </div>
+        </div>
+    </div>
 </html>
+
+<script>
+    var nome = document.getElementById("nome");
+    var email = document.getElementById("email");
+    var sexo = document.getElementById("sexo");
+    var bio = document.getElementById("bio");
+
+    nome.innerHTML = sessionStorage.NOME_USUARIO;
+    email.innerHTML = sessionStorage.EMAIL_USUARIO;
+
+    if (sessionStorage.SEXO_USUARIO == 'm') {
+        sexo.innerHTML = 'Masculino';
+    } else if (sessionStorage.SEXO_USUARIO == 'f') {
+        sexo.innerHTML = 'Feminino';
+    } else {
+        sexo.innerHTML = '(Não especificado)';
+    }
+    
+    bio.innerHTML = sessionStorage.BIO_USUARIO;
+</script>

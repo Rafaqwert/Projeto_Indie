@@ -96,13 +96,20 @@
 
         //Validações
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
-            //cardErro.style.display = "block";
             alert("Preencha todos os campos");
 
             finalizarAguardar();
             return false;
-        } else {
-            //setInterval(sumirMensagem, 5000);
+        } else if (senhaVar != confirmacaoSenhaVar){
+            alert("Confirmação de senha incompatível!");
+
+            finalizarAguardar();
+            return false;
+        } else if (emailVar.indexOf('@') == -1) {
+            alert("Preencha o e-mail corretamente!");
+
+            finalizarAguardar();
+            return false;
         }
 
         fetch("/usuarios/cadastrar", {
@@ -125,7 +132,7 @@
                 //cardErro.style.display = "block";
 
                 //mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-                alert("Cadastro realizado com certo")
+                alert("Cadastro realizado com sucesso")
 
                 setTimeout(() => {
                     window.location = "login.html";

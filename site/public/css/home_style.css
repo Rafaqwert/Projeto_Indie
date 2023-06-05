@@ -80,6 +80,7 @@ ul {
 
 li {
     padding-left: 2vh;
+    cursor: pointer;
 }
 
 

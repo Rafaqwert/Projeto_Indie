@@ -17,6 +17,15 @@ html, body {
     border-radius: 2vh 2vh 0vh 0vh;
 }
 
+.div_windowConta {
+    height: 100vh;
+    width: 100%;
+}
+
+.div_articleConta {
+    width: 50%;
+}
+
 /*=================Header====================*/
 header {
     position: fixed;

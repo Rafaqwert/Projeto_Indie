@@ -62,9 +62,7 @@
         var senhaVar = ipt_senha.value;
 
         if (emailVar == "" || senhaVar == "") {
-            //cardErro.style.display = "block"
-            //mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            alert("erro")
+            alert("Por favor, preencha os campos corretamente!")
             finalizarAguardar();
             return false;
         }
@@ -97,6 +95,8 @@
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.idCadastro;
+                    sessionStorage.SEXO_USUARIO = json.sexo;
+                    sessionStorage.BIO_USUARIO = json.biografia;
 
                     setTimeout(function () {
                         window.location = "./home/home.html";
