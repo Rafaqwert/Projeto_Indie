@@ -213,6 +213,10 @@ span { font-size: 20px;}
     text-shadow: #F2F2EC 2px 2px;
 }
 
+.content h1 {
+    font-size: 38px;
+}
+
 .content .div_img {
     display: flex;
     justify-content: center;
